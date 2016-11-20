@@ -3,23 +3,23 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    
+
     <title>JS Bin</title>
-    
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css.css">
   </head>
   <body>
-    
+
     <div id="container">
-      
+
       <div id="cost-calculate">
         <h2>Kalkulator Kosztow</h2>
         <input type="number" class="amount" placeholder="wpisz kwote do obliczenia" id="item">
       </div>
-      
+
       <!-- toggle button brutto -->
       <div class="onoffswitch">
         <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
@@ -28,18 +28,19 @@
           <span class="onoffswitch-switch"></span>
         </label>
       </div>
-      
+
       <!-- selected menu-->
-      
+
       <div class="styled-select">
         <h1>Stawka Vat</h1>
-        <select id="vat">
+        <select id="vat vat-select">
           <option value='0'>0%</option>
           <option value='0.08'>8%</option>
           <option value='0.23'>23%</option>
+          <option id="vat-clicked">add another value of tax</option>
         </select>
       </div>
-      
+
       <div class="styled-select" >
         <h1>Stawka Podatku Dochodowego</h1>
         <select id="tax" >
@@ -49,22 +50,21 @@
           <option value='0.32'>32%</option>
         </select>
       </div>
-      
+
       <input type="submit" value="Oblicz" id="count">
-      
+
     </div>
-    
+
     <!-- counting place -->
-    
+
     <div id="count-money">
       <div id="price-brutto">Cena brutto:</div>
       <div id="price-netto">Cena netto:</div>
       <div id="vat-value">Wartość podatku Vat:  </div>
       <div id="tax-value">Wartość podatku dochodowego:  </div>
-      <div id="total-cost">Całkowity koszt przedsiębiorcy:</div>  
+      <div id="total-cost">Całkowity koszt przedsiębiorcy:</div>
     </div>
-    
     <script src="final.js"></script>
-    
+
   </body>
 </html>
