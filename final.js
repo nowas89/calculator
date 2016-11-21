@@ -1,3 +1,11 @@
+document.getElementById('vat').addEventListener('change', function() {
+
+	if (this.value === 'other') {
+		console.log('Add other value already.')
+	}
+
+});
+
 
 var calcState = 'brutto';
 document.getElementById("myonoffswitch").addEventListener("change", function() {
@@ -15,13 +23,6 @@ document.getElementById('count').addEventListener('click', function() {
 
 
 
-/*
-    document.getElementById('vat-clicked').addEventListener('change', function() {
-    //createElement = document.createElement('input');
-    alert('createElement');
-
-
-  }, false);*/
 
 
 //calculation if you entered the brutto
