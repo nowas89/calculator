@@ -1,8 +1,9 @@
 document.getElementById('vat').addEventListener('change', function() {
 
 	if (this.value === 'other') {
-		console.log('Add other value already.')
-	}
+		var input = document.createElement("input");
+		input.type = "text";
+	  select.appendChild(input); // put it into the DOM	}
 
 });
 
