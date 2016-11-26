@@ -42,8 +42,6 @@ document.getElementById('tax').addEventListener('change', function() {
 		document.getElementById("myonoffswitch").addEventListener("change", function() {
   	calcState = (this.checked) ? 'brutto':'netto';
 	});
-
-
 document.getElementById('count').addEventListener('click', function() {
   if (calcState === 'brutto') {
     brutto();
@@ -52,11 +50,7 @@ document.getElementById('count').addEventListener('click', function() {
   }
 });
 
-
-
-
-
-//calculation if you entered the brutto
+//////////////calculation if you entered the brutto/////////////////////////////
 function brutto() {
   var incomeTax = document.getElementById('tax');
   var bruttoValue = document.getElementById("item");
@@ -74,7 +68,7 @@ function brutto() {
 
 
 }
-
+//////////////calculation if you entered the netto/////////////////////////////
 function netto(){
   var incomeTax = document.getElementById('tax');
   var placeholderValue = document.getElementById("item");
