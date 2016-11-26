@@ -1,23 +1,43 @@
+////////////////////adding new value to vat ////////////////////////////////////
 document.getElementById('vat').addEventListener('change', function() {
 	if (this.value === 'other') {
 		var taxPrompt = prompt("wpisz wartość podatku Vat");
-		if(taxPrompt === ""){
-			 // user pressed OK, but the input field was empty
-			 alert('nic nie wpisałeś gamoniu');
-				}else if(typeof vatTax){
+		if(isNaN(taxPrompt)){
+			 			// user pressed OK, but the input field was empty
+			 			alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
+				}else if(taxPrompt){
 						var vatTax = document.getElementById('vat');
 						var vatTaxSum = (Number(taxPrompt)/100);
 						var opt = document.getElementById('vat').options[3];
 						opt.value = Number(vatTaxSum);
-}
+						opt.innerHTML = taxPrompt + "%";
 						console.log(vatTaxSum);
-				}else{
-						console.log('dupsko');
+					}else{
+									 // user pressed OK, but the input field was empty
+									 alert('nic nie wpisałeś gamoniu');
+				}
 		}
-	});
-
-
-
+		}, false);
+////////////////////adding new value to tax //////////////////////////////
+document.getElementById('tax').addEventListener('change', function() {
+	if (this.value === 'other') {
+		var taxPrompt = prompt("wpisz wartość podatku Dochodowego");
+		if(isNaN(taxPrompt)){
+						 			// user pressed OK, but the input field was empty
+						 			alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
+					 }else if(taxPrompt){
+									var tax = document.getElementById('tax');
+									var taxSum = (Number(taxPrompt)/100);
+									var opt = document.getElementById('tax').options[4];
+									opt.value = Number(taxSum);
+									opt.innerHTML = taxPrompt + "%";
+						}else{
+										 // user pressed OK, but the input field was empty
+										 alert('nic nie wpisałeś gamoniu');
+					}
+	}
+}, false);
+//////////////////////////////////////////////////////////////////////////////
 	var calcState = 'brutto';
 		document.getElementById("myonoffswitch").addEventListener("change", function() {
   	calcState = (this.checked) ? 'brutto':'netto';
