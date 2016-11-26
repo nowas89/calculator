@@ -1,6 +1,6 @@
 .onoffswitch {
-    margin-left: 50px;
-    position: relative; width: 132px;
+    margin: auto;
+    position: relative; width: 140px;
     -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
 }
 .onoffswitch-checkbox {
@@ -8,34 +8,34 @@
 }
 .onoffswitch-label {
     display: block; overflow: hidden; cursor: pointer;
-    border: 2px solid #999999; border-radius: 20px;
+    border: 2px solid #999999; border-radius: 16px;
 }
 .onoffswitch-inner {
     display: block; width: 200%; margin-left: -100%;
     transition: margin 0.3s ease-in 0s;
 }
 .onoffswitch-inner:before, .onoffswitch-inner:after {
-    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    display: block; float: left; width: 50%; height: 24px; padding: 0; line-height: 24px;
+    font-size: 18px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
     box-sizing: border-box;
 }
 .onoffswitch-inner:before {
-    content: "  Brutto";
-    padding-left: 10px;
+    content: "Brutto";
+    padding-left: 12px;
     background-color: #34A7C1; color: #FFFFFF;
 }
 .onoffswitch-inner:after {
     content: "Netto";
-    padding-right: 10px;
-    background-color: #DEDEDE; color: #999999;
+    padding-right: 12px;
+    background-color: #34A7C1; color: #FFFFFF;
     text-align: right;
 }
 .onoffswitch-switch {
-    display: block; width: 20px; margin: 5px;
+    display: block; width: 31px; margin: -3.5px;
     background: #FFFFFF;
     position: absolute; top: 0; bottom: 0;
-    right: 98px;
-    border: 2px solid #999999; border-radius: 20px;
+    right: 112px;
+    border: 2px solid #999999; border-radius: 16px;
     transition: all 0.3s ease-in 0s;
 }
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
@@ -46,17 +46,25 @@
 }
 
 .styled-select select {
-  margin-left: 50px;
-   background: transparent;
-   width: 268px;
-   padding: 5px;
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   }
+  -webkit-appearance: button;
+  -webkit-border-radius: 2px;
+  -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  -webkit-padding-end: 20px;
+  -webkit-padding-start: 2px;
+  -webkit-user-select: none;
+  background-image: -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
+  background-position: 97% center;
+  background-repeat: no-repeat;
+  border: 1px solid #AAA;
+  color: #555;
+  margin: 20px;
+  overflow: hidden;
+  padding: 5px 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 300px;
+}
+
 
    /*start css basic by me*/
 
@@ -71,6 +79,9 @@
 
    }
    #container{
+     text-align: center;
+     margin: 0 auto;
+     padding: 30px;
       margin-bottom: 40px;
       width: 100%;
       height: 450px;
@@ -90,7 +101,7 @@
      }
 
         input[type=number]:focus {
-         width: 100%;
+         width: 60%;
          padding: 12px 20px;
          height: 40px;
          margin: 8px 0;
@@ -104,9 +115,9 @@
 
       input[type=submit] {
         display: block;
-           margin-left: 50px;
-        	background-color: #34A7C1;
-          color: #FFFFFF;;
+        margin: 0 auto;
+        background-color: #34A7C1;
+        color: #FFFFFF;;
       	-moz-border-radius:28px;
       	-webkit-border-radius:28px;
       	border-radius:28px;
@@ -130,6 +141,7 @@
       }
 
       #cost-calculate{
+             margin: 0 auto;
         text-align: center;
         padding: 6px;
         margin-bottom: 15px;
@@ -142,6 +154,7 @@
           opacity: 0.6;
       }
       #count-money{
+        margin-left: 20%;
         padding: 10px;
         height: 250px;
         width: 600px;

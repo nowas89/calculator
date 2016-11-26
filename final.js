@@ -7,6 +7,7 @@ document.getElementById('vat').addEventListener('change', function() {
 				}else if(typeof vatTax){
 						var vatTax = document.getElementById('vat');
 						var vatTaxSum = (Number(taxPrompt)/100);
+						console.log(vatTaxSum);
 				}else{
 						console.log('dupsko');
 		}
