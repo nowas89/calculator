@@ -7,13 +7,15 @@ document.getElementById('vat').addEventListener('change', function() {
 				}else if(typeof vatTax){
 						var vatTax = document.getElementById('vat');
 						var vatTaxSum = (Number(taxPrompt)/100);
+						var opt = document.getElementById('vat').options[3];
+						opt.value = Number(vatTaxSum);
+}
 						console.log(vatTaxSum);
 				}else{
 						console.log('dupsko');
 		}
-	}
+	});
 
-});
 
 
 	var calcState = 'brutto';
