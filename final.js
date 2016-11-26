@@ -1,17 +1,24 @@
 document.getElementById('vat').addEventListener('change', function() {
-
 	if (this.value === 'other') {
-		var input = document.createElement("input");
-		input.type = "text";
-	  select.appendChild(input); // put it into the DOM	}
+		var taxPrompt = prompt("wpisz wartość podatku Vat");
+		if(taxPrompt === ""){
+			 // user pressed OK, but the input field was empty
+			 alert('nic nie wpisałeś gamoniu');
+				}else if(typeof vatTax){
+						var vatTax = document.getElementById('vat');
+						var vatTaxSum = (Number(taxPrompt)/100);
+				}else{
+						console.log('dupsko');
+		}
+	}
 
 });
 
 
-var calcState = 'brutto';
-document.getElementById("myonoffswitch").addEventListener("change", function() {
-  calcState = (this.checked) ? 'brutto':'netto';
-});
+	var calcState = 'brutto';
+		document.getElementById("myonoffswitch").addEventListener("change", function() {
+  	calcState = (this.checked) ? 'brutto':'netto';
+	});
 
 
 document.getElementById('count').addEventListener('click', function() {
