@@ -4,19 +4,27 @@ document.getElementById('vat').addEventListener('change', function() {
 								var changeClass = document.getElementById('vatInputId').classList.remove('vatInput');
 								var inputClassChange = document.getElementById('vatInputId').classList.add('vatInputVisability');
 								var inputField = document.getElementById('vatInputId');
+
+
+
 												inputField.addEventListener('change', function (){
-																	var vatTax = document.getElementById('vat');
-													        var vatTaxSum = inputField.value/100;
-													        var opt = document.getElementById('vat').options[3];
-													        opt.value = Number(vatTaxSum);
-													        opt.innerHTML = inputField.value + "%";
-													        console.log(vatTaxSum);
+														if(isNaN(inputField.value)){
+																	// user pressed OK, but the input field was empty
+																	alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
 
-
-												}, false);
-
+														}else{
+																	// var vatTax = document.getElementById('vat');
+																	var vatTaxSum = inputField.value/100;
+																	var opt = document.getElementById('vat').options[3];
+																	opt.value = Number(vatTaxSum);
+																	opt.innerHTML = inputField.value + "%";
+																	console.log(vatTaxSum);
+																	
+															}
+															});
 				}
-				});
+			});
+
 
 
 
