@@ -140,6 +140,20 @@
       	top:1px;
       }
 
+      .vatInput{
+        margin: 0 auto;
+        visibility: hidden;
+      }
+      .vatInputVisability{
+        margin: 0 auto;
+        visibility: visible;
+      }
+
+      /*#vatInput-visable{
+        margin: 0 auto;
+        visibility: hidden;;
+      }*/
+
       #cost-calculate{
              margin: 0 auto;
         text-align: center;
