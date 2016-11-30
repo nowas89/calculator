@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
 
@@ -11,67 +12,77 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="css.css">
-  </head>
-  <body>
+</head>
+
+<body>
 
     <div id="container">
 
-      <div id="cost-calculate">
-        <h2>Kalkulator Kosztow</h2>
-        <input type="number" class="amount" placeholder="wpisz kwote do obliczenia" id="item">
-      </div>
+        <div id="cost-calculate">
+            <h2>Kalkulator Kosztow</h2>
+            <input type="text" class="amount" placeholder="wpisz kwote do obliczenia" id="item">
+        </div>
 
-      <!-- toggle button brutto -->
-      <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-        <label class="onoffswitch-label" for="myonoffswitch">
-          <span class="onoffswitch-inner"></span>
-          <span class="onoffswitch-switch"></span>
-        </label>
-      </div>
+        <!-- toggle button brutto -->
+        <div class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+            <label class="onoffswitch-label" for="myonoffswitch">
+                    <span class="onoffswitch-inner"></span>
+                      <span class="onoffswitch-switch"></span>
+                  </label>
 
-      <!-- selected menu-->
+        </div>
 
-      <div class="styled-select">
-        <h1>Stawka Vat</h1>
-        <select id="vat">
+        <!-- selected menu-->
+
+        <div class="styled-select">
+            <h1>Stawka Vat</h1>
+            <select id="vat">
           <option value='0'>0%</option>
           <option value='0.08'>8%</option>
           <option value='0.23'>23%</option>
           <option value="other">Add another VAT value..</option>
         </select>
 
-      </div>
-          <div>
-              <input type="number" class="vatInput" id="vatInputId" placeholder="Wprowadz wysokość podatku Vat">
-          </div>
+        </div>
+        <div id="vatStyle">
+            <input type="text" class="vatInput" id="vatInputId" placeholder="Wprowadz wysokość podatku Vat w %">
+        </div>
 
 
-      <div class="styled-select" >
-        <h1>Stawka Podatku Dochodowego</h1>
-        <select id="tax" >
+        <div class="styled-select">
+            <h1>Stawka Podatku Dochodowego</h1>
+            <select id="tax">
           <option value="0">0%</option>
           <option value='0.18'>18%</option>
           <option value='0.19'>19%</option>
           <option value='0.32'>32%</option>
           <option value="other">Add another TAX value..</option>
         </select>
-      </div>
+        </div>
+        <div id="taxStyle">
+            <input type="text" class="taxInput" id="taxInputId" placeholder="Wprowadz wysokość podatku dochodowego w %">
 
-      <input type="submit" value="Oblicz" id="count">
+            <input type="submit" value="Oblicz" id="count">
+        </div>
+
+
 
     </div>
 
     <!-- counting place -->
 
     <div id="count-money">
-      <div id="price-brutto">Cena brutto:</div>
-      <div id="price-netto">Cena netto:</div>
-      <div id="vat-value">Wartość podatku Vat:  </div>
-      <div id="tax-value">Wartość podatku dochodowego:  </div>
-      <div id="total-cost">Całkowity koszt przedsiębiorcy:</div>
+
+
+        <div id="price-brutto">Cena brutto:</div>
+        <div id="price-netto">Cena netto:</div>
+        <div id="vat-value">Wartość podatku Vat: </div>
+        <div id="tax-value">Wartość podatku dochodowego: </div>
+        <div id="total-cost">Całkowity koszt przedsiębiorcy:</div>
     </div>
     <script src="final.js"></script>
 
-  </body>
+</body>
+
 </html>
