@@ -33,7 +33,6 @@ document.getElementById('vat').addEventListener('change', function() {
                 opt.value = Number(vatTaxSum);
                 opt.innerHTML = inputField.value + "%";
                 addItemTodo(opt.innerHTML);
-                console.log(vatTaxSum);
             }
         });
     }
