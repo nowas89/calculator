@@ -1,3 +1,19 @@
+function addItemTodo(text) {
+  var list = document.getElementById('vat');
+
+  var item = document.createElement('option');
+  item.innerText = text;
+
+  list.insertBefore(item, list.childNodes[0]);
+}
+
+
+
+
+
+
+
+
 ////////////////////adding new value to vat ~input ////////////////////////////////////
 document.getElementById('vat').addEventListener('change', function() {
     if (this.value === 'other') {
@@ -16,11 +32,14 @@ document.getElementById('vat').addEventListener('change', function() {
                 var opt = document.getElementById('vat').options[3];
                 opt.value = Number(vatTaxSum);
                 opt.innerHTML = inputField.value + "%";
+                addItemTodo(opt.innerHTML);
                 console.log(vatTaxSum);
             }
         });
     }
 });
+
+
 /////////////////////////////////////////////adding new value to ~input///////////////////////////////////////////////////////////////
 document.getElementById('tax').addEventListener('change', function() {
     if (this.value === 'other') {
