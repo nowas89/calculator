@@ -2,7 +2,7 @@
 document.getElementById('vat').addEventListener('change', function() {
     if (this.value === 'other') {
         var changeClass = document.getElementById('vatInputId').classList.remove('vatInput');
-        var inputClassChange = document.getElementById('vatInputId').classList.add('vatInputVisability');
+        var inputClassChange = document.getElementById('vatInputId').classList.add('vatInputvisibility');
         var inputField = document.getElementById('vatInputId');
 
         inputField.addEventListener('change', function() {
@@ -25,7 +25,7 @@ document.getElementById('vat').addEventListener('change', function() {
 document.getElementById('tax').addEventListener('change', function() {
     if (this.value === 'other') {
         var changeTaxClass = document.getElementById('taxInputId').classList.remove('taxInput');
-        var inputTaxClassChange = document.getElementById('taxInputId').classList.add('taxInputVisability');
+        var inputTaxClassChange = document.getElementById('taxInputId').classList.add('taxInputvisibility');
         var inputTax = document.getElementById('taxInputId');
 
         inputTax.addEventListener('change', function() {
@@ -45,7 +45,6 @@ document.getElementById('tax').addEventListener('change', function() {
         });
     }
 });
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var calcState = 'brutto';
 document.getElementById("myonoffswitch").addEventListener("change", function() {

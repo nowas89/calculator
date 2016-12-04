@@ -176,7 +176,7 @@ input[type=submit]:active {
     visibility: hidden;
 }
 
-.vatInputVisability {
+.vatInputvisibility {
     margin: 0 auto;
     visibility: visible;
 }
@@ -186,7 +186,7 @@ input[type=submit]:active {
     visibility: hidden;
 }
 
-.taxInputVisability {
+.taxInputvisibility {
     margin: 0 auto;
     visibility: visible;
 }
