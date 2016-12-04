@@ -29,10 +29,12 @@ document.getElementById('vat').addEventListener('change', function() {
             } else {
 
                 var vatTaxSum = inputField.value / 100;
-                var opt = document.getElementById('vat').options[3];
-                opt.value = Number(vatTaxSum);
-                opt.innerHTML = inputField.value + "%";
-                addItemTodo(opt.innerHTML);
+                var x = document.getElementById('vat');
+                x.value = Number(vatTaxSum);
+                var option = document.createElement("option");
+                option.text =  inputField.value + "%";;
+                x.add(option);
+                document.getElementById("vatInputId").className = "vatInput";
             }
         });
     }
