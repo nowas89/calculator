@@ -1,5 +1,4 @@
 .onoffswitch {
-    margin: auto;
     position: relative;
     width: 140px;
     -webkit-user-select: none;
@@ -76,25 +75,21 @@
 .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
     right: 0px;
 }
+.styled-select{
+  margin: 0 auto;
+}
 
 .styled-select select {
     -webkit-appearance: button;
-    -webkit-border-radius: 2px;
-    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    -webkit-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -webkit-user-select: none;
-    background-image: -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-    background-position: 97% center;
-    background-repeat: no-repeat;
     border: 1px solid #AAA;
     color: #555;
-    margin: 20px;
+    margin: 5px;;
     overflow: hidden;
     padding: 5px 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 300px;
+    height: 35px;
 }
 
 
@@ -105,18 +100,15 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
     width: 600px;
-    height: 700px;
+    min-height: 800px;
     margin: 0 auto;
-    padding: 5px;
+
 }
 
 #container {
-    text-align: center;
-    margin: 0 auto;
-    padding: 30px;
-    margin-bottom: 40px;
+
     width: 100%;
-    height: 450px;
+    min-height: 450px;
 }
 
 input[type=text] {
@@ -133,7 +125,6 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    width: 50%;
     padding: 6px 10px;
     height: 40px;
     margin: 8px 0;
@@ -149,7 +140,6 @@ input[type=submit] {
     margin-left: 50%;
     background-color: #34A7C1;
     color: #FFFFFF;
-    ;
     -moz-border-radius: 28px;
     -webkit-border-radius: 28px;
     border-radius: 28px;
@@ -174,21 +164,26 @@ input[type=submit]:active {
 .vatInput {
     margin: 0 auto;
     visibility: hidden;
+    display: inline;
 }
 
 .vatInputvisibility {
     margin: 0 auto;
     visibility: visible;
+    display: inline;
 }
 
 .taxInput {
     margin: 0 auto;
     visibility: hidden;
+    height: 35px;
+    display: inline;
 }
 
 .taxInputvisibility {
     margin: 0 auto;
     visibility: visible;
+    display: inline;
 }
 
 #cost-calculate {
@@ -208,4 +203,13 @@ input[type=submit]:active {
     width: 600px;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
+}
+#vatStyle #taxStyle{
+  margin: auto;
+  padding: 0px;
+}
+
+#sumbmitCountButton{
+  height: 70px;
+  margin: 100px;
 }
