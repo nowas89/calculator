@@ -1,11 +1,33 @@
-.onoffswitch {
+body {
+    background: rgb(230, 255, 247);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    width: 600px;
+    min-height: 600px;
     margin: auto;
+    border: 1px solid;
+}
+
+#container {
+
+    width: 100%;
+    min-height: 400px;
+    margin: auto;
+}
+
+
+
+
+
+
+.onoffswitch {
     position: relative;
     width: 140px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-}
+    margin: auto;
+  }
 
 .onoffswitch-checkbox {
     display: none;
@@ -76,67 +98,49 @@
 .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
     right: 0px;
 }
+.styled-select{
+  margin: 0 auto;
+}
 
 .styled-select select {
     -webkit-appearance: button;
-    -webkit-border-radius: 2px;
-    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    -webkit-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -webkit-user-select: none;
-    background-image: -webkit-linear-gradient(#FAFAFA, #F4F4F4 40%, #E5E5E5);
-    background-position: 97% center;
-    background-repeat: no-repeat;
     border: 1px solid #AAA;
     color: #555;
-    margin: 20px;
+    margin: 5px;;
     overflow: hidden;
     padding: 5px 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 300px;
+    width: 150px;
+    height: 35px;
+    margin-left: 225px;
+
 }
 
 
-/*start css basic by me*/
 
-body {
-    background: rgb(230, 255, 247);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    width: 600px;
-    height: 700px;
-    margin: 0 auto;
-    padding: 5px;
-}
 
-#container {
-    text-align: center;
-    margin: 0 auto;
-    padding: 30px;
-    margin-bottom: 40px;
-    width: 100%;
-    height: 450px;
+
+
+ .amount{
+  margin-left: 38%;
+
 }
 
 input[type=text] {
-    min-width: 30px;
+    width: 150px;
     padding: 6px 10px;
     height: 40px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
 }
 
 input[type=text]:focus {
-    width: 50%;
     padding: 6px 10px;
     height: 40px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -146,10 +150,8 @@ input[type=text]:focus {
 input[type=submit] {
     position: relative;
     display: block;
-    margin-left: 50%;
     background-color: #34A7C1;
     color: #FFFFFF;
-    ;
     -moz-border-radius: 28px;
     -webkit-border-radius: 28px;
     border-radius: 28px;
@@ -161,6 +163,8 @@ input[type=submit] {
     padding: 5px 17px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #2f6627;
+    margin-left: 258px;
+    margin-top: 33px;
 }
 
 input[type=submit]:hover {
@@ -171,41 +175,61 @@ input[type=submit]:active {
     position: relative;
 }
 
+
 .vatInput {
-    margin: 0 auto;
+    margin: auto;
     visibility: hidden;
+    display: inline;
 }
 
 .vatInputvisibility {
-    margin: 0 auto;
+    margin: auto;
     visibility: visible;
+    display: inline;
 }
 
 .taxInput {
-    margin: 0 auto;
+    margin: auto;
     visibility: hidden;
+    display: inline;
+
 }
 
 .taxInputvisibility {
-    margin: 0 auto;
+    margin: auto;
     visibility: visible;
+    display: inline;
 }
 
 #cost-calculate {
-    margin: 0 auto;
     padding: 10px;
+    top: 30px;
 }
 
-#cost-calculate h2 {
+#container h2 {
+
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
     opacity: 0.6;
+    display: block;
+    text-align: center;
+}
+#container h1 {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+  opacity: 0.6;
+
 }
 
 #count-money {
-    padding: 30px;
-    min-height: 250px;
+    min-height: 80px;
     width: 600px;
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-size: 15px;
+    left: 50px;
+    margin-left: 60px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+
 }
