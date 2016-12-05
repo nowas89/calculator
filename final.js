@@ -71,11 +71,15 @@ function brutto() {
         var vatValue = (Number(bruttoValue.value) - Number(netto)).toFixed(2);
         var totalCost = (Number(bruttoValue.value) - (Number(vatValue) + Number(taxValue))).toFixed(2);
 
-        document.getElementById('price-netto').innerHTML = 'Cena Netto: ' + netto + ' zł';
-        document.getElementById('tax-value').innerHTML = 'Wartość podatku dochodowego:  ' + taxValue + ' zł';
-        document.getElementById('vat-value').innerHTML = 'Wartość podatku Vat:  ' + vatValue + ' zł';
-        document.getElementById('price-brutto').innerHTML = 'Cena brutto: ' + bruttoValue.value + ' zł';
-        document.getElementById('total-cost').innerHTML = 'Całkowity koszt dla przedsiębiorcy ' + totalCost + ' zł';
+        var result = {
+            nett: netto,
+            gross: bruttoValue.value,
+            incomeTax: taxValue,
+            vat: vatValue,
+            total: totalCost
+        };
+
+        displayResults(result);
     }
 
 }
@@ -94,10 +98,22 @@ function netto() {
         var vatValueNettoFunction = (Number(bruttoPrice) - Number(placeholderValue.value)).toFixed(2);
         var totalCost = (Number(bruttoPrice) - (Number(vatValueNettoFunction) + Number(taxValueNetto))).toFixed(2);
 
-        document.getElementById('price-netto').innerHTML = 'Cena Netto: ' + placeholderValue.value + ' zł';
-        document.getElementById('tax-value').innerHTML = 'Wartość podatku dochodowego:  ' + taxValueNetto + ' zł';
-        document.getElementById('vat-value').innerHTML = 'Wartość podatku Vat:  ' + vatValueNettoFunction + ' zł';
-        document.getElementById('price-brutto').innerHTML = 'Cena brutto: ' + bruttoPrice + ' zł';
-        document.getElementById('total-cost').innerHTML = 'Całkowity koszt dla przedsiębiorcy ' + totalCost + ' zł';
+        var result = {
+            nett: placeholderValue.value,
+            gross: bruttoPrice,
+            incomeTax: taxValueNetto,
+            vat: vatValueNettoFunction,
+            total: totalCost
+        };
+
+        displayResults(result);
     }
+}
+
+function displayResults(results) {
+        document.getElementById('price-netto').innerHTML = 'Cena Netto: ' + result.nett + ' zł';
+        document.getElementById('tax-value').innerHTML = 'Wartość podatku dochodowego:  ' + result.incomeTax + ' zł';
+        document.getElementById('vat-value').innerHTML = 'Wartość podatku Vat:  ' + result.vat + ' zł';
+        document.getElementById('price-brutto').innerHTML = 'Cena brutto: ' + result.gross + ' zł';
+        document.getElementById('total-cost').innerHTML = 'Całkowity koszt dla przedsiębiorcy ' + result.total + ' zł';
 }
