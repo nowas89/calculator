@@ -4,6 +4,7 @@
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    margin-left: 50px;
 }
 
 .onoffswitch-checkbox {
@@ -137,7 +138,7 @@ input[type=text]:focus {
 input[type=submit] {
     position: relative;
     display: block;
-    margin-left: 50%;
+    margin-left: 80px;
     background-color: #34A7C1;
     color: #FFFFFF;
     -moz-border-radius: 28px;

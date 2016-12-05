@@ -1,18 +1,3 @@
-function addItemTodo(text) {
-  var list = document.getElementById('vat');
-
-  var item = document.createElement('option');
-  item.innerText = text;
-
-  list.insertBefore(item, list.childNodes[0]);
-}
-
-
-
-
-
-
-
 
 ////////////////////adding new value to vat ~input ////////////////////////////////////
 document.getElementById('vat').addEventListener('change', function() {
@@ -32,9 +17,11 @@ document.getElementById('vat').addEventListener('change', function() {
                 var x = document.getElementById('vat');
                 x.value = Number(vatTaxSum);
                 var option = document.createElement("option");
-                option.text =  inputField.value + "%";;
-                x.add(option);
+                x.insertBefore(option, x.childNodes[0]);
+                option.text =  Number(inputField.value) + "%";;
                 document.getElementById("vatInputId").className = "vatInput";
+
+
             }
         });
     }
@@ -54,12 +41,13 @@ document.getElementById('tax').addEventListener('change', function() {
                 alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
 
             } else {
-                // var vatTax = document.getElementById('vat');
                 var taxSum = inputTax.value / 100;
-                var optTax = document.getElementById('tax').options[4];
-                optTax.value = Number(taxSum);
-                optTax.innerHTML = inputTax.value + "%";
-                console.log(taxSum);
+                var x = document.getElementById('tax');
+                x.value = Number(taxSum);
+                var option = document.createElement("option");
+                option.text =  inputTax.value + "%";;
+                x.add(option);
+                document.getElementById("taxInputId").className = "taxInput";
 
             }
         });
