@@ -1,6 +1,6 @@
 
 ////////////////////adding new value to vat ~input ////////////////////////////////////
-document.getElementById('vat').addEventListener('change', function classChange(){
+document.getElementById('vat').addEventListener('change', function(){
     if (this.value === 'other') {
         var changeClass = document.getElementById('vatInputId').classList.remove('vatInput');
         var inputClassChange = document.getElementById('vatInputId').classList.add('vatInputvisibility');
@@ -12,7 +12,6 @@ document.getElementById('vat').addEventListener('change', function classChange()
                 alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
 
             } else {
-                document.getElementById('vat').removeEventListener("change", classChange());
                 var vatTaxSum = inputField.value / 100;
                 var x = document.getElementById('vat');
                 x.value = Number(vatTaxSum);
@@ -34,7 +33,7 @@ document.getElementById('tax').addEventListener('change', function() {
         var inputTaxClassChange = document.getElementById('taxInputId').classList.add('taxInputvisibility');
         var inputTax = document.getElementById('taxInputId');
 
-        inputTax.addEventListener('change', function() {
+        inputTax.onchange = function(){
             if (isNaN(inputTax.value)) {
                 // user pressed OK, but the input field was empty
                 alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
