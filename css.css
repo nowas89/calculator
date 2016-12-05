@@ -1,11 +1,33 @@
+body {
+    background: rgb(230, 255, 247);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    width: 600px;
+    min-height: 600px;
+    margin: auto;
+    border: 1px solid;
+}
+
+#container {
+
+    width: 100%;
+    min-height: 400px;
+    margin: auto;
+}
+
+
+
+
+
+
 .onoffswitch {
     position: relative;
     width: 140px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    margin-left: 50px;
-}
+    margin: auto;
+  }
 
 .onoffswitch-checkbox {
     display: none;
@@ -89,46 +111,36 @@
     padding: 5px 10px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: 300px;
+    width: 150px;
     height: 35px;
-}
-
-
-/*start css basic by me*/
-
-body {
-    background: rgb(230, 255, 247);
-    font-family: 'Open Sans', sans-serif;
-    font-size: 12px;
-    width: 600px;
-    min-height: 800px;
-    margin: 0 auto;
+    margin-left: 225px;
 
 }
 
-#container {
 
-    width: 100%;
-    min-height: 450px;
+
+
+
+
+ .amount{
+  margin-left: 30%;
+
 }
 
 input[type=text] {
-    min-width: 30px;
+    width: 150px;
     padding: 6px 10px;
     height: 40px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
 }
 
 input[type=text]:focus {
     padding: 6px 10px;
     height: 40px;
-    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -138,7 +150,6 @@ input[type=text]:focus {
 input[type=submit] {
     position: relative;
     display: block;
-    margin-left: 80px;
     background-color: #34A7C1;
     color: #FFFFFF;
     -moz-border-radius: 28px;
@@ -152,6 +163,8 @@ input[type=submit] {
     padding: 5px 17px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #2f6627;
+    margin-left: 258px;
+    margin-top: 33px;
 }
 
 input[type=submit]:hover {
@@ -162,55 +175,57 @@ input[type=submit]:active {
     position: relative;
 }
 
+
 .vatInput {
-    margin: 0 auto;
+    margin: auto;
     visibility: hidden;
     display: inline;
 }
 
 .vatInputvisibility {
-    margin: 0 auto;
+    margin: auto;
     visibility: visible;
     display: inline;
 }
 
 .taxInput {
-    margin: 0 auto;
+    margin: auto;
     visibility: hidden;
-    height: 35px;
     display: inline;
+
 }
 
 .taxInputvisibility {
-    margin: 0 auto;
+    margin: auto;
     visibility: visible;
     display: inline;
 }
 
 #cost-calculate {
-    margin: 0 auto;
+  margin-left: 60px;
     padding: 10px;
+    top: 30px;
 }
 
-#cost-calculate h2 {
+#container h2 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
     opacity: 0.6;
+  text-align: center;
+}
+#container h1 {
+  text-align: center;;
+
 }
 
 #count-money {
-    padding: 30px;
-    min-height: 250px;
+    min-height: 80px;
     width: 600px;
     font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
-}
-#vatStyle #taxStyle{
-  margin: auto;
-  padding: 0px;
-}
+    font-size: 15px;
+    left: 50px;
+    margin-left: 60px;
+    margin-top: 60px;
+    margin-bottom: 60px;
 
-#sumbmitCountButton{
-  height: 70px;
-  margin: 100px;
 }

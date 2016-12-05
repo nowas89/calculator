@@ -43,33 +43,35 @@
           <option value='0.23'>23%</option>
           <option value="other">Add another VAT value..</option>
         </select>
-        <input type="text" class="vatInput" id="vatInputId" placeholder="Vat w %">
+            <input type="text" class="vatInput" id="vatInputId" placeholder="Vat w %">
         </div>
         <div class="styled-select">
             <h1>Stawka Podatku Dochodowego</h1>
             <select id="tax">
-          <option value="0">0%</option>
-          <option value='0.18'>18%</option>
-          <option value='0.19'>19%</option>
-          <option value='0.32'>32%</option>
-          <option value="other">Add another TAX value..</option>
-        </select>
-        <input type="text" class="taxInput" id="taxInputId" placeholder="Wprowadz wysokość podatku dochodowego w %">
+                  <option value="0">0%</option>
+                  <option value='0.18'>18%</option>
+                  <option value='0.19'>19%</option>
+                  <option value='0.32'>32%</option>
+                  <option value="other">Add another TAX value..</option>
+              </select>
+            <input type="text" class="taxInput" id="taxInputId" placeholder="Wprowadz wysokość podatku dochodowego w %">
+
+            <div id="submitCountButton">
+                <input type="submit" value="Oblicz" id="count">
+            </div>
 
         </div>
 
 
     </div>
-    <div id="submitCountButton">
-      <input type="submit" value="Oblicz" id="count">
-    </div>
+
     <!-- counting place -->
     <div id="count-money">
-      <div >Cena brutto: <span id="price-brutto"></span></div>
-      <div >Cena netto: <span id="price-netto"></span></div>
-      <div >Wartość podatku Vat: <span id="vat-value"></span></div>
-      <div >Wartość podatku dochodowego: <span id="tax-value"></span></div>
-      <div >Całkowity koszt przedsiębiorcy: <span id="total-cost"></span></div>
+        <div>Cena brutto: <span id="price-brutto"></span> zł</div>
+        <div>Cena netto: <span id="price-netto"></span> zł</div>
+        <div>Wartość podatku Vat: <span id="vat-value"></span> zł</div>
+        <div>Wartość podatku dochodowego: <span id="tax-value"></span> zł</div>
+        <div>Całkowity koszt przedsiębiorcy: <span id="total-cost"></span> zł</div>
     </div>
     <script src="final.js"></script>
 </body>

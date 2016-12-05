@@ -12,12 +12,13 @@ document.getElementById('vat').addEventListener('change', function(){
                 alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
 
             } else {
-                var vatTaxSum = inputField.value / 100;
+                var vatTaxSum = Number(inputField.value) / 100;
                 var x = document.getElementById('vat');
-                x.value = Number(vatTaxSum);
                 var option = document.createElement("option");
+                option.value = Number(vatTaxSum);
+                x.value = Number(vatTaxSum);
                 x.insertBefore(option, x.childNodes[0]);
-                option.text =  Number(inputField.value) + "%";;
+                option.text =  Number(inputField.value) + "%";
                 document.getElementById("vatInputId").className = "vatInput";
             }
           }
@@ -41,9 +42,11 @@ document.getElementById('tax').addEventListener('change', function() {
             } else {
                 var taxSum = inputTax.value / 100;
                 var x = document.getElementById('tax');
-                x.value = Number(taxSum);
                 var option = document.createElement("option");
-                option.text =  Number(inputTax.value) + "%";;
+                option.value = Number(taxSum);
+                x.value = Number(taxSum);
+                option.text =  Number(inputTax.value) + "%";
+                x.insertBefore(option, x.childNodes[0])
                 x.add(option);
                 document.getElementById("taxInputId").className = "taxInput";
 
@@ -77,11 +80,15 @@ function brutto() {
         var vatValue = (Number(bruttoValue.value) - Number(netto)).toFixed(2);
         var totalCost = (Number(bruttoValue.value) - (Number(vatValue) + Number(taxValue))).toFixed(2);
 
-        document.getElementById('price-netto').innerHTML = netto;
-        document.getElementById('tax-value').innerHTML = taxValue;
-        document.getElementById('vat-value').innerHTML = vatValue;
-        document.getElementById('price-brutto').innerHTML = bruttoValue.value;
-        document.getElementById('total-cost').innerHTML = totalCost;
+        var result = {
+            nett: netto,
+            gross: bruttoValue.value,
+            incomeTax: taxValue,
+            vat: vatValue,
+            total: totalCost
+        };
+
+        displayResults(result);
     }
 
 }
@@ -112,7 +119,7 @@ function netto() {
     }
 }
 
-function displayResults(results) {
+function displayResults(result) {
         document.getElementById('price-netto').innerHTML = result.nett;
         document.getElementById('tax-value').innerHTML = result.incomeTax;
         document.getElementById('vat-value').innerHTML = result.vat;
