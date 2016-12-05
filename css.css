@@ -5,7 +5,9 @@ body {
     width: 600px;
     min-height: 600px;
     margin: auto;
-    border: 1px solid;
+    -webkit-box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
+-moz-box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
+box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
 }
 
 #container {
@@ -100,20 +102,24 @@ body {
 }
 .styled-select{
   margin: 0 auto;
+
 }
 
 .styled-select select {
-    -webkit-appearance: button;
-    border: 1px solid #AAA;
-    color: #555;
-    margin: 5px;;
-    overflow: hidden;
-    padding: 5px 10px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  text-align: center;
+  background: transparent;
+  padding: 5px;
+  font-size: 12px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance: none;
     width: 150px;
     height: 35px;
     margin-left: 225px;
+    -webkit-box-shadow: 0px 0px 31px -5px rgba(0,0,0,0.10);
+-moz-box-shadow: 0px 0px 31px -5px rgba(0,0,0,0.10);
+box-shadow: 0px 0px 31px -5px rgba(0,0,0,0.10);
 
 }
 
@@ -128,6 +134,8 @@ body {
 }
 
 input[type=text] {
+  text-align: center;
+    background: transparent;
     width: 150px;
     padding: 6px 10px;
     height: 40px;
@@ -232,4 +240,17 @@ input[type=submit]:active {
     margin-top: 60px;
     margin-bottom: 60px;
 
+}
+.hidden{
+  visibility: hidden;
+}
+.visible{
+  visibility: visible;
+  -webkit-transition-duration: 2s; /* Safari */
+  -webkit-transition-delay: 0.8s; /* Safari */
+  transition-duration: 2s;
+  transition-delay: 0.8s;
+}
+#count-money span{
+  font-weight: bold;
 }
