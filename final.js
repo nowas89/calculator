@@ -1,12 +1,11 @@
-
 ////////////////////adding new value to vat ~input ////////////////////////////////////
-document.getElementById('vat').addEventListener('change', function(){
+document.getElementById('vat').addEventListener('change', function() {
     if (this.value === 'other') {
         var changeClass = document.getElementById('vatInputId').classList.remove('vatInput');
         var inputClassChange = document.getElementById('vatInputId').classList.add('vatInputvisibility');
         var inputField = document.getElementById('vatInputId');
 
-          inputField.onchange = function(){
+        inputField.onchange = function() {
             if (isNaN(inputField.value)) {
 
                 alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
@@ -18,12 +17,12 @@ document.getElementById('vat').addEventListener('change', function(){
                 option.value = Number(vatTaxSum);
                 x.value = Number(vatTaxSum);
                 x.insertBefore(option, x.childNodes[0]);
-                option.text =  Number(inputField.value) + "%";
+                option.text = Number(inputField.value) + "%";
                 document.getElementById("vatInputId").className = "vatInput";
             }
-          }
         }
-    });
+    }
+});
 
 
 
@@ -34,7 +33,7 @@ document.getElementById('tax').addEventListener('change', function() {
         var inputTaxClassChange = document.getElementById('taxInputId').classList.add('taxInputvisibility');
         var inputTax = document.getElementById('taxInputId');
 
-        inputTax.onchange = function(){
+        inputTax.onchange = function() {
             if (isNaN(inputTax.value)) {
                 // user pressed OK, but the input field was empty
                 alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
@@ -46,14 +45,13 @@ document.getElementById('tax').addEventListener('change', function() {
                 option.value = Number(taxSum);
                 x.value = Number(taxSum);
                 x.insertBefore(option, x.childNodes[0]);
-                option.text =  Number(inputTax.value) + "%";
+                option.text = Number(inputTax.value) + "%";
                 document.getElementById("taxInputId").className = "taxInput";
 
             }
         }
     }
 });
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 var calcState = 'brutto';
 document.getElementById("myonoffswitch").addEventListener("change", function() {
     calcState = (this.checked) ? 'brutto' : 'netto';
@@ -66,8 +64,19 @@ document.getElementById('count').addEventListener('click', function() {
     }
 });
 
+function visible() { //when you pushed submit button that function will check what value you just entered, or is not entered;
+    var item = document.getElementById('item');
+    if (item.value.length == 0) {
+        alert('powinieneś wpisać kwote ktorą chcesz obliczyc');
+    } else {
+
+        document.getElementById('count-money').className = "visible";
+    }
+}
+
 //////////////calculation if you entered the brutto/////////////////////////////
 function brutto() {
+    visible();
     var incomeTax = document.getElementById('tax');
     var bruttoValue = document.getElementById("item");
     var vatTax = document.getElementById('vat');
@@ -120,9 +129,9 @@ function netto() {
 
 
 function displayResults(result) {
-        document.getElementById('price-netto').innerHTML = result.nett;
-        document.getElementById('tax-value').innerHTML = result.incomeTax;
-        document.getElementById('vat-value').innerHTML = result.vat;
-        document.getElementById('price-brutto').innerHTML = result.gross;
-        document.getElementById('total-cost').innerHTML = result.total;
+    document.getElementById('price-netto').innerHTML = result.nett;
+    document.getElementById('tax-value').innerHTML = result.incomeTax;
+    document.getElementById('vat-value').innerHTML = result.vat;
+    document.getElementById('price-brutto').innerHTML = result.gross;
+    document.getElementById('total-cost').innerHTML = result.total;
 }
