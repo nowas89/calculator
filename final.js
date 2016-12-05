@@ -100,10 +100,22 @@ function netto() {
         var vatValueNettoFunction = (Number(bruttoPrice) - Number(placeholderValue.value)).toFixed(2);
         var totalCost = (Number(bruttoPrice) - (Number(vatValueNettoFunction) + Number(taxValueNetto))).toFixed(2);
 
-        document.getElementById('price-netto') = placeholderValue.value;
-        document.getElementById('tax-value') = taxValueNetto;
-        document.getElementById('vat-value') = vatValueNettoFunction ;
-        document.getElementById('price-brutto') =bruttoPrice;
-        document.getElementById('total-cost') = totalCost;
+        var result = {
+            nett: placeholderValue.value,
+            gross: bruttoPrice,
+            incomeTax: taxValueNetto,
+            vat: vatValueNettoFunction,
+            total: totalCost
+        };
+
+        displayResults(result);
     }
+}
+
+function displayResults(results) {
+        document.getElementById('price-netto').innerHTML = result.nett;
+        document.getElementById('tax-value').innerHTML = result.incomeTax;
+        document.getElementById('vat-value').innerHTML = result.vat;
+        document.getElementById('price-brutto').innerHTML = result.gross;
+        document.getElementById('total-cost').innerHTML = result.total;
 }
