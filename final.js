@@ -83,10 +83,10 @@ function brutto() {
     if (isNaN(bruttoValue.value)) {
         alert('wprowadz poprawną kwote Netto lub Brutto');
     } else {
-        var netto = (Number(bruttoValue.value) / (Number(vatTax.value) + 1)).toFixed(2);
-        var taxValue = (Number(netto) * Number(incomeTax.value)).toFixed(2);
-        var vatValue = (Number(bruttoValue.value) - Number(netto)).toFixed(2);
-        var totalCost = (Number(bruttoValue.value) - (Number(vatValue) + Number(taxValue))).toFixed(2);
+        var netto = (Number(bruttoValue.value) / (Number(vatTax.value) + 1)).toFixed(2).replace(".00", "");
+        var taxValue = (Number(netto) * Number(incomeTax.value)).toFixed(2).replace(".00", "");
+        var vatValue = (Number(bruttoValue.value) - Number(netto)).toFixed(2).replace(".00", "");
+        var totalCost = (Number(bruttoValue.value) - (Number(vatValue) + Number(taxValue))).toFixed(2).replace(".00", "");
 
         var result = {
             nett: netto,
@@ -110,10 +110,10 @@ function netto() {
         alert('wprowadz poprawną kwote Netto lub Brutto');
     } else {
 
-        var taxValueNetto = (Number(placeholderValue.value) * Number(incomeTax.value)).toFixed(2);
-        var bruttoPrice = (Number(placeholderValue.value) + (Number(placeholderValue.value) * (Number(vatTax.value)))).toFixed(2);
-        var vatValueNettoFunction = (Number(bruttoPrice) - Number(placeholderValue.value)).toFixed(2);
-        var totalCost = (Number(bruttoPrice) - (Number(vatValueNettoFunction) + Number(taxValueNetto))).toFixed(2);
+        var taxValueNetto = (Number(placeholderValue.value) * Number(incomeTax.value)).toFixed(2).replace(".00", "");
+        var bruttoPrice = (Number(placeholderValue.value) + (Number(placeholderValue.value) * (Number(vatTax.value)))).toFixed(2).replace(".00", "");
+        var vatValueNettoFunction = (Number(bruttoPrice) - Number(placeholderValue.value)).toFixed(2).replace(".00", "");
+        var totalCost = (Number(bruttoPrice) - (Number(vatValueNettoFunction) + Number(taxValueNetto))).toFixed(2).replace(".00", "");
 
         var result = {
             nett: placeholderValue.value,
