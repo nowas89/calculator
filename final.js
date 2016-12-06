@@ -102,6 +102,7 @@ function brutto() {
 }
 //////////////calculation if you entered the netto/////////////////////////////
 function netto() {
+    visible();
     var incomeTax = document.getElementById('tax');
     var placeholderValue = document.getElementById("item");
     var vatTax = document.getElementById('vat');
