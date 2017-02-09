@@ -9,8 +9,6 @@
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
     <link rel="stylesheet" href="css.css">
 </head>
 
@@ -32,7 +30,7 @@
                   </label>
 
         </div>
-
+<hr>
         <!-- selected menu-->
 
         <div class="styled-select">
@@ -45,6 +43,7 @@
         </select>
             <input type="text" class="vatInput" id="vatInputId" placeholder="Vat w %">
         </div>
+        <hr>
         <div class="styled-select">
             <h1>Stawka Podatku Dochodowego</h1>
             <select id="tax">
@@ -55,9 +54,9 @@
                   <option value="other">Add another TAX value..</option>
               </select>
             <input type="text" class="taxInput" id="taxInputId" placeholder="Wprowadz wysokość podatku dochodowego w %">
-
+<hr>
             <div id="submitCountButton">
-                <input  type="submit" value="Oblicz" id="count">
+                <input type="submit" value="Oblicz" id="count">
             </div>
 
         </div>
@@ -73,8 +72,11 @@
         <div>Wartość podatku dochodowego: <span id="tax-value"></span> zł</div>
         <div>Całkowity koszt przedsiębiorcy: <span id="total-cost"></span> zł</div>
     </div>
+
+    <!-- Latest compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="final.js"></script>
+
 </body>
 
 </html>

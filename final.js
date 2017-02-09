@@ -1,3 +1,6 @@
+
+
+
 ////////////////////adding new value to vat ~input ////////////////////////////////////
 document.getElementById('vat').addEventListener('change', function() {
     if (this.value === 'other') {
@@ -59,8 +62,10 @@ document.getElementById("myonoffswitch").addEventListener("change", function() {
 document.getElementById('count').addEventListener('click', function() {
     if (calcState === 'brutto') {
         brutto();
+
     } else {
         netto();
+        
     }
 });
 

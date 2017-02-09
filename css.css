@@ -1,5 +1,4 @@
 body {
-
     background: rgb(230, 255, 247);
     font-family: 'Open Sans', sans-serif;
     font-size: 12px;
@@ -7,31 +6,23 @@ body {
     min-height: 600px;
     margin: auto;
     margin-top: 100px;
-    -webkit-box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
--moz-box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
-box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 #container {
-
     width: 100%;
     min-height: 400px;
     margin: auto;
 }
 
-
-
-
-
-
 .onoffswitch {
     position: relative;
-    width: 140px;
+    width: 128px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-    margin: auto;
-  }
+    margin: 0 auto;
+}
 
 .onoffswitch-checkbox {
     display: none;
@@ -42,7 +33,7 @@ box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
     overflow: hidden;
     cursor: pointer;
     border: 2px solid #999999;
-    border-radius: 16px;
+    border-radius: 20px;
 }
 
 .onoffswitch-inner {
@@ -56,10 +47,10 @@ box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
     display: block;
     float: left;
     width: 50%;
-    height: 24px;
+    height: 30px;
     padding: 0;
-    line-height: 24px;
-    font-size: 18px;
+    line-height: 30px;
+    font-size: 17px;
     color: white;
     font-family: Trebuchet, Arial, sans-serif;
     font-weight: bold;
@@ -67,31 +58,31 @@ box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
 }
 
 .onoffswitch-inner:before {
-    content: "Brutto";
-    padding-left: 12px;
-    background-color: #34A7C1;
+    content: "BRUTTO";
+    padding-left: 16px;
+    background-color: #6E7070;
     color: #FFFFFF;
 }
 
 .onoffswitch-inner:after {
-    content: "Netto";
-    padding-right: 12px;
-    background-color: #34A7C1;
-    color: #FFFFFF;
+    content: "NETTO";
+    padding-right: 16px;
+    background-color: #EEEEEE;
+    color: #999999;
     text-align: right;
 }
 
 .onoffswitch-switch {
     display: block;
-    width: 31px;
-    margin: -3.5px;
+    width: 28px;
+    margin: 1px;
     background: #FFFFFF;
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 112px;
+    right: 94px;
     border: 2px solid #999999;
-    border-radius: 16px;
+    border-radius: 20px;
     transition: all 0.3s ease-in 0s;
 }
 
@@ -102,41 +93,42 @@ box-shadow: 0px 0px 41px -5px rgba(0,0,0,0.67);
 .onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
     right: 0px;
 }
-.styled-select{
-  margin: 0 auto;
 
+.styled-select {
+    margin: 0 auto;
 }
 
 .styled-select select {
-  text-align: center;
-  background: transparent;
-  padding: 5px;
-  font-size: 12px;
-  line-height: 1;
-  border: 0;
-  border-radius: 0;
-  -webkit-appearance: none;
-    width: 150px;
+    text-align: center;
+    background: transparent;
+    padding: 5px;
+    font-size: 12px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    width: 90px;
     height: 35px;
-    margin-left: 225px;
-    -webkit-box-shadow: 0px 0px 31px -5px rgba(0,0,0,0.10);
--moz-box-shadow: 0px 0px 31px -5px rgba(0,0,0,0.10);
-box-shadow: 0px 0px 31px -5px rgba(0,0,0,0.10);
+    margin-left: 45%;
 
+
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    opacity: 0.6;
+    /*-webkit-box-shadow: 0px 0px 31px -5px rgba(0, 0, 0, 0.10);
+    -moz-box-shadow: 0px 0px 31px -5px rgba(0, 0, 0, 0.10);
+    box-shadow: 0px 0px 31px -5px rgba(0, 0, 0, 0.10);
+    transition: all 0.3s ease-in-out;*/
 }
 
-
-
-
-
-
- .amount{
-  margin-left: 38%;
-
+.amount {
+    margin-left: 38%;
 }
 
 input[type=text] {
-  text-align: center;
+    text-align: center;
     background: transparent;
     width: 150px;
     padding: 6px 10px;
@@ -160,8 +152,7 @@ input[type=text]:focus {
 input[type=submit] {
     position: relative;
     display: block;
-    background-color: #34A7C1;
-    color: #FFFFFF;
+    background-color: #6E7070;
     -moz-border-radius: 28px;
     -webkit-border-radius: 28px;
     border-radius: 28px;
@@ -175,16 +166,16 @@ input[type=submit] {
     text-shadow: 0px 1px 0px #2f6627;
     margin-left: 258px;
     margin-top: 33px;
+    transition: 0.3s ease-in-out;
 }
 
 input[type=submit]:hover {
-    background-color: #11bde4;
+    transform: scale(1.1);
 }
 
 input[type=submit]:active {
     position: relative;
 }
-
 
 .vatInput {
     margin: auto;
@@ -202,7 +193,6 @@ input[type=submit]:active {
     margin: auto;
     visibility: hidden;
     display: inline;
-
 }
 
 .taxInputvisibility {
@@ -217,42 +207,64 @@ input[type=submit]:active {
 }
 
 #container h2 {
-
     font-family: 'Ubuntu', sans-serif;
     font-size: 20px;
     opacity: 0.6;
     display: block;
     text-align: center;
 }
-#container h1 {
-  text-align: center;
-  font-family: 'Ubuntu', sans-serif;
-  font-size: 20px;
-  opacity: 0.6;
 
+#container h1 {
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    opacity: 0.6;
 }
 
 #count-money {
     min-height: 80px;
     width: 600px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 15px;
     left: 50px;
     margin-left: 60px;
     margin-top: 60px;
     margin-bottom: 60px;
+    padding: 20px;
+}
 
+.hidden {
+    visibility: hidden;
 }
-.hidden{
-  visibility: hidden;
+
+.visible {
+    visibility: visible;
+    -webkit-transition-duration: 2s;
+    /* Safari */
+    -webkit-transition-delay: 0.8s;
+    /* Safari */
+    transition-duration: 2s;
+    transition-delay: 0.8s;
 }
-.visible{
-  visibility: visible;
-  -webkit-transition-duration: 2s; /* Safari */
-  -webkit-transition-delay: 0.8s; /* Safari */
-  transition-duration: 2s;
-  transition-delay: 0.8s;
+
+#count-money span {
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
+    opacity: 0.6;
 }
-#count-money span{
-  font-weight: bold;
+#count-money div{
+
+
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 13px;
+    opacity: 0.6;
+}
+
+
+hr{
+  margin-top: 15px;
+  margin-bottom: 15px;
+  opacity: 0.15;
 }
