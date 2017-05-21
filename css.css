@@ -3,7 +3,7 @@
     width: 30%;
 }
 .move-container{
-    margin: 30px 0 0 35%;
+    margin: 50px 0 0 35%;
 }
 
 .vatInput {
@@ -113,10 +113,11 @@
     right: 0px;
 }
 .hidden{
-  visibility: hidden;
+  display: none;
+    background: red;
 }
 .visible{
-  visibility: visible;
+  display: "";
   -webkit-transition-duration: 2s; /* Safari */
   -webkit-transition-delay: 0.8s; /* Safari */
   transition-duration: 2s;

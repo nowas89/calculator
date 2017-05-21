@@ -117,7 +117,7 @@ function visible() { //when you pushed submit button that function will check wh
         alert('powinieneś wpisać kwote ktorą chcesz obliczyc');
     } else {
 
-        document.getElementById('count-money').className = "visible-content";
+        document.getElementById('count-container').className = "visible";
     }
 }
 
