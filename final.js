@@ -117,7 +117,7 @@ function visible() { //when you pushed submit button that function will check wh
         alert('powinieneś wpisać kwote ktorą chcesz obliczyc');
     } else {
 
-        document.getElementById('count-money').className = "visible";
+        document.getElementById('count-money').className = "visible-content";
     }
 }
 
@@ -177,9 +177,9 @@ function netto() {
 
 
 function displayResults(result) {
-    document.getElementById('price-netto').innerHTML = result.nett;
-    document.getElementById('tax-value').innerHTML = result.incomeTax;
-    document.getElementById('vat-value').innerHTML = result.vat;
-    document.getElementById('price-brutto').innerHTML = result.gross;
-    document.getElementById('total-cost').innerHTML = result.total;
+    document.getElementById('price-netto').innerHTML = result.nett + " zł";
+    document.getElementById('tax-value').innerHTML = result.incomeTax + " zł";
+    document.getElementById('vat-value').innerHTML = result.vat + " zł";
+    document.getElementById('price-brutto').innerHTML = result.gross + " zł";
+    document.getElementById('total-cost').innerHTML = result.total + " zł";
 }

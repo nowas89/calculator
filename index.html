@@ -12,61 +12,89 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
-<!--    <link rel="stylesheet" href="css.css">-->
+    <link rel="stylesheet" href="css.css">
 </head>
 
 <body>
 
-    <div id="container">
+    <div class="jumbotron container">
+        <div class="row d-flex justify-content-center">
+            <div class=" col-md-12">
+                <div id="cost-calculate ">
+                    <h1 class="text-center p-3">Kalkulator Kosztow</h1>
+                    <form class="d-flex justify-content-center">
+                        <div class="form-group">
+                            <input type="text" class="amount form-control" placeholder="Wpisz Kwotę" id="item">
+                        </div>
+                    </form>
+                </div>
 
-        <div id="cost-calculate">
-            <h2>Kalkulator Kosztow</h2>
-            <input type="text" class="amount" placeholder="Wpisz Kwotę" id="item">
-        </div>
+                <!-- toggle button brutto -->
+                <div class="onoffswitch text-center">
+                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                        <label class="onoffswitch-label" for="myonoffswitch">
+                            <span class="onoffswitch-inner"></span>
+                             <span class="onoffswitch-switch"></span>
+                        </label>
 
-        <!-- toggle button brutto -->
-        <div class="onoffswitch">
-            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-            <label class="onoffswitch-label" for="myonoffswitch">
-                    <span class="onoffswitch-inner"></span>
-                    <span class="onoffswitch-switch"></span>
-                  </label>
+                </div>
 
-        </div>
+                <!-- selected menu-->
 
-        <!-- selected menu-->
-
-        <div class="styled-select">
-            <h1>Stawka Vat</h1>
-            <select id="vat">
+                <div class="styled-select d-flex flex-column">
+                    <h3 class="text-center p-3">Stawka Vat</h3>
+                    <select id="vat" class="form-control align-self-center smaler-width">
             
         </select>
-            <input type="text" class="vatInput" id="vatInputId" placeholder="Vat w %">
-        </div>
-        <div class="styled-select">
-            <h1>Stawka Podatku Dochodowego</h1>
-            <select id="tax">
- 
-              </select>
-            <input type="text" class="taxInput" id="taxInputId" placeholder="Wprowadz wysokość podatku dochodowego w %">
+                    <form>
+                        <div class="form-group text-center">
+                            <input type="text" class="vatInput form-control " id="vatInputId" placeholder="Vat w %">
+                        </div>
+                    </form>
 
-            <div id="submitCountButton">
-                <input  type="submit" value="Oblicz" id="count">
+                </div>
+                <div class="styled-select d-flex flex-column text-center">
+                    <h3 class="p-3">Stawka Podatku Dochodowego</h3>
+                    <select id="tax" class="form-control align-self-center smaler-width">
+               </select>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="taxInput form-control" id="taxInputId" placeholder="Wprowadz wysokość podatku dochodowego w %">
+                        </div>
+                    </form>
+                    <div id="submitCountButton">
+                        <input type="submit" value="Oblicz" id="count" class="btn btn-outline-primary">
+                    </div>
+
+                </div>
+
+
+                <!-- counting place -->
+                <div id="count-money" class="hidden d-flex justify-content-center ">
+                    <div class="move-container">
+                        <div class="d-flex flex-row"><h5>Cena brutto:  </h5>
+                            <h5 class="text-primary" id="price-brutto"></h5>
+                        </div>
+                    <div class="d-flex flex-row"><h5>Cena netto:  </h5>
+                            <h5 class="text-primary" id="price-netto"></h5>
+                        </div>
+                <div class="d-flex flex-row"><h5>Wartość podatku Vat:  </h5>
+                            <h5 class="text-primary" id="vat-value"></h5>
+                        </div>
+            <div class="d-flex flex-row"><h5>Wartość podatku dochodowego:  </h5>
+                            <h5 class="text-primary" id="tax-value"></h5>
+                        </div>
+        <div class="d-flex flex-row"><h5>Całkowity koszt przedsiębiorcy:  </h5>
+                            <h5 class="text-primary" id="total-cost"></h5>
+                        </div>
+
+                    </div>
+                </div>
             </div>
-
         </div>
-
-
     </div>
 
-    <!-- counting place -->
-    <div id="count-money" class="hidden">
-        <div>Cena brutto: <span id="price-brutto"></span> zł</div>
-        <div>Cena netto: <span id="price-netto"></span> zł</div>
-        <div>Wartość podatku Vat: <span id="vat-value"></span> zł</div>
-        <div>Wartość podatku dochodowego: <span id="tax-value"></span> zł</div>
-        <div>Całkowity koszt przedsiębiorcy: <span id="total-cost"></span> zł</div>
-    </div>
+
     <script src="final.js"></script>
 </body>
 
