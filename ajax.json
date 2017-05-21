@@ -1,0 +1,42 @@
+{
+
+	"tax": [{
+			"value": 0,
+			"name": "0%"
+		},
+		{
+			"value": 0.18,
+			"name": "18%"
+		}, {
+			"value": 0.19,
+			"name": "19%"
+		}, {
+			"value": 0.32,
+			"name": "32%"
+		},
+		{
+			"value": "other",
+			"name": "Add another TAX value.."
+		}
+
+	],
+
+	"vat": [
+        {
+			"value": 0,
+			"name": "0%"
+		},
+		{
+			"value": 0.08,
+			"name": "8%"
+		}, {
+			"value": 0.23,
+			"name": "23%"
+		},
+		{
+			"value": "other",
+			"name": "Add another TAX value.."
+		}
+
+	]
+}

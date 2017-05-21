@@ -1,11 +1,58 @@
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        var response = JSON.parse(xhttp.responseText),
+            vatJSON = response.vat,
+            taxJSON = response.tax,
+            outputVat = "",
+            outputTax = "";
+
+
+
+        (function vatIteration() {
+            for (var i = 0; i < vatJSON.length; i++) {
+
+
+                outputVat += `<option value=${vatJSON[i].value}>${vatJSON[i].name}</option>`;
+
+            }
+            var vatId = document.getElementById('vat').innerHTML = outputVat;
+
+        })();
+        
+                (function taxIteration() {
+            for (var i = 0; i < taxJSON.length; i++) {
+
+
+                outputTax += `<option value=${taxJSON[i].value}>${taxJSON[i].name}</option>`;
+
+            }
+            var taxId = document.getElementById('tax').innerHTML = outputTax;
+
+        })();
+
+
+    }
+};
+xhttp.open("GET", "ajax.json", true);
+xhttp.send();
+
+
+
+
+
+
+
+
+
 ////////////////////adding new value to vat ~input ////////////////////////////////////
-document.getElementById('vat').addEventListener('change', function() {
+document.getElementById('vat').addEventListener('change', function () {
     if (this.value === 'other') {
         var changeClass = document.getElementById('vatInputId').classList.remove('vatInput');
         var inputClassChange = document.getElementById('vatInputId').classList.add('vatInputvisibility');
         var inputField = document.getElementById('vatInputId');
 
-        inputField.onchange = function() {
+        inputField.onchange = function () {
             if (isNaN(inputField.value)) {
 
                 alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
@@ -20,20 +67,20 @@ document.getElementById('vat').addEventListener('change', function() {
                 option.text = Number(inputField.value) + "%";
                 document.getElementById("vatInputId").className = "vatInput";
             }
-        }
+        };
     }
 });
 
 
 
 /////////////////////////////////////////////adding new value to ~input///////////////////////////////////////////////////////////////
-document.getElementById('tax').addEventListener('change', function() {
+document.getElementById('tax').addEventListener('change', function () {
     if (this.value === 'other') {
         var changeTaxClass = document.getElementById('taxInputId').classList.remove('taxInput');
         var inputTaxClassChange = document.getElementById('taxInputId').classList.add('taxInputvisibility');
         var inputTax = document.getElementById('taxInputId');
 
-        inputTax.onchange = function() {
+        inputTax.onchange = function () {
             if (isNaN(inputTax.value)) {
                 // user pressed OK, but the input field was empty
                 alert('Serio? nie wiesz nawet jak zapisać Wysokość Podatku?');
@@ -49,14 +96,14 @@ document.getElementById('tax').addEventListener('change', function() {
                 document.getElementById("taxInputId").className = "taxInput";
 
             }
-        }
+        };
     }
 });
 var calcState = 'brutto';
-document.getElementById("myonoffswitch").addEventListener("change", function() {
+document.getElementById("myonoffswitch").addEventListener("change", function () {
     calcState = (this.checked) ? 'brutto' : 'netto';
 });
-document.getElementById('count').addEventListener('click', function() {
+document.getElementById('count').addEventListener('click', function () {
     if (calcState === 'brutto') {
         brutto();
     } else {
