@@ -2,100 +2,108 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
 
-    <title>Calculate your Taxes</title>
+  <title>Calculate your Taxes</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="css.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css.css">
 </head>
 
 <body>
-
-    <div class="jumbotron container">
-        <div class="row d-flex justify-content-center">
-            <div class=" col-md-12">
-                <div id="cost-calculate ">
-                    <h1 class="text-center p-3">Kalkulator Kosztow</h1>
-                    <form class="d-flex justify-content-center">
-                        <div class="form-group">
-                            <input type="text" class="amount form-control" placeholder="Wpisz Kwotę" id="item">
-                        </div>
-                    </form>
-                </div>
-
-                <!-- toggle button brutto -->
-                <div class="onoffswitch text-center">
-                    <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                        <label class="onoffswitch-label" for="myonoffswitch">
+  <div class="container">
+    <div class="jumbotron">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-12 col-sm-12">
+          <div id="cost-calculate ">
+            <h1 class="text-center p-3">Kalkulator Kosztow</h1>
+            <form id="amount-form" class="d-flex justify-content-center">
+              <div class="form-group">
+                <input type="text" class="amount form-control" placeholder="Wpisz Kwotę" id="item" data-toggle="tooltip" data-placement="right" title="Wpisz poprawną kwotę ktorą chcesz użyć do obliczeń">
+              </div>
+            </form>
+          </div>
+          <!-- toggle button brutto -->
+          <div class="onoffswitch text-center ">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+            <label class="onoffswitch-label" for="myonoffswitch" data-toggle="tooltip" data-placement="right" title="wybierz odpowiedni format, domyślnie BRUTTO">
                             <span class="onoffswitch-inner"></span>
                              <span class="onoffswitch-switch"></span>
                         </label>
-
-                </div>
-
-                <!-- selected menu-->
-
-                <div class="styled-select d-flex flex-column">
-                    <h3 class="text-center p-3">Stawka Vat</h3>
-                    <select id="vat" class="form-control align-self-center smaler-width">
-            
+          </div>
+          <!-- selected menu-->
+          <div class="styled-select d-flex flex-column ">
+            <h3 class="text-center p-3">Stawka Vat</h3>
+            <select id="vat" class="form-control align-self-center smaler-width">
         </select>
-                    <form>
-                        <div class="form-group text-center">
-                            <input type="text" class="vatInput form-control " id="vatInputId" placeholder="Vat w %">
-                        </div>
-                    </form>
-
-                </div>
-                <div class="styled-select d-flex flex-column text-center">
-                    <h3 class="p-3">Stawka Podatku Dochodowego</h3>
-                    <select id="tax" class="form-control align-self-center smaler-width">
+            <form>
+              <div class="form-group text-center">
+                <input type="text" class="vatInput form-control smaler-width" id="vatInputId" placeholder="Vat w %">
+              </div>
+            </form>
+          </div>
+          <div class="styled-select d-flex flex-column text-center">
+            <h3 class="p-3">Stawka Podatku Dochodowego</h3>
+            <select id="tax" class="form-control align-self-center smaler-width">
                </select>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="taxInput form-control" id="taxInputId" placeholder="Wprowadz wysokość podatku dochodowego w %">
-                        </div>
-                    </form>
-                    <div id="submitCountButton">
-                        <input type="submit" value="Oblicz" id="count" class="btn btn-outline-primary">
-                    </div>
-
-                </div>
-
-
-                <!-- counting place -->
-                <div id="count-money" class="d-flex justify-content-center">
-                    <div id="count-container" class="move-container hidden">
-                        <div class="d-flex flex-row"><h5>Cena brutto:  </h5>
-                            <h5 class="text-primary" id="price-brutto"></h5>
-                        </div>
-                    <div class="d-flex flex-row"><h5>Cena netto:  </h5>
-                            <h5 class="text-primary" id="price-netto"></h5>
-                        </div>
-                <div class="d-flex flex-row"><h5>Wartość podatku Vat:  </h5>
-                            <h5 class="text-primary" id="vat-value"></h5>
-                        </div>
-            <div class="d-flex flex-row"><h5>Wartość podatku dochodowego:  </h5>
-                            <h5 class="text-primary" id="tax-value"></h5>
-                        </div>
-        <div class="d-flex flex-row"><h5>Całkowity koszt przedsiębiorcy:  </h5>
-                            <h5 class="text-primary" id="total-cost"></h5>
-                        </div>
-
-                    </div>
-                </div>
+            <form>
+              <div class="form-group">
+                <input type="text" class="taxInput form-control smaler-width" id="taxInputId" placeholder="Wprowadz wysokość podatku dochodowego w %">
+              </div>
+            </form>
+            <div id="submitCountButton">
+              <input type="submit" value="Oblicz" id="count" class="btn btn-outline-primary btn-lg">
             </div>
+          </div>
+          <!-- counting place -->
+          <div id="count-money" class="d-flex justify-content-center mt-5">
+            <div id="count-container" class="move-container hidden">
+              <div class="d-flex flex-row">
+                <h6>Cena brutto: </h6>
+                <h6 class="text-primary ml-1 " id="price-brutto"></h6>
+              </div>
+              <div class="d-flex flex-row">
+                <h6>Cena netto: </h6>
+                <h6 class="text-primary ml-1 " id="price-netto"></h6>
+              </div>
+              <div class="d-flex flex-row">
+                <h6>Wartość podatku Vat: </h6>
+                <h6 class="text-primary ml-1 " id="vat-value"></h6>
+              </div>
+              <div class="d-flex flex-row">
+                <h6>Wartość podatku dochodowego: </h6>
+                <h6 class="text-primary ml-1 " id="tax-value"></h6>
+              </div>
+              <div class="d-flex flex-row">
+                <h6>Całkowity koszt przedsiębiorcy: </h6>
+                <h6 class="text-primary ml-1 " id="total-cost"></h6>
+              </div>
+              <div class="addResults d-flex justify-content-center mt-5">
+                <button id="addResults" class="btn btn-primary ">Zapisz Obliczenia</button>
+              </div>
+            </div>
+          </div>
+          <!--                    results container                 -->
+          <div class="resultsContainer row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-12 d-flex flex-column">
+              <div id="outputResults" class="row d-flex flex-row justify-content-around"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
 
-    <script src="final.js"></script>
+<script src="jqueryAddons.js"></script>
+<script src="final.js"></script>
 </body>
 
 </html>
